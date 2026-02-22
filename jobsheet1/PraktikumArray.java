@@ -7,7 +7,7 @@ public class PraktikumArray {
         Scanner sc = new Scanner(System.in);
         // String[] MK = {"Pancasila", "Konsep Teknologi Informasi" + "Critical Thinking dan Problem Solving", "Matematika Dasar", 
         // "Bahasa Inggris", "Dasar Pemrograman", "Praktikum Dasar Pemrograman", "Keselamatan dan Kesehatan Kerja"};
-        String[] MK = new String[3];
+        String[] MK = new String[8];
         double[][] NilaiMK = new double[MK.length][3]; // 8 baris matkul, dan 3 kolom (nilai angka, bobot sks, nilai setara)
         String[] NilaiHuruf = new String[MK.length];
         double totalSKS = 0;
