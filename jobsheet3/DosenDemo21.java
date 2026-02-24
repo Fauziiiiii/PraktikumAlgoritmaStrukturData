@@ -6,8 +6,12 @@ public class DosenDemo21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Dosen21[] arrayOfDosen = new Dosen21[3];
-        String kode, nama, dummy, inputJK;
+        System.out.print("Masukkan jumlah dosen: ");
+        int jumlahDosen = sc.nextInt();
+        sc.nextLine();
+
+        Dosen21[] arrayOfDosen = new Dosen21[jumlahDosen];
+        String kode, nama;
         Boolean jenisKelamin;
         int usia;
 
@@ -17,26 +21,26 @@ public class DosenDemo21 {
             kode = sc.nextLine();
             System.out.print("Nama          : ");
             nama = sc.nextLine();
-            System.out.print("Jenis Kelamin : ");
-            inputJK = sc.nextLine();
-            jenisKelamin = inputJK.equalsIgnoreCase("Pria"); // Pria = true, Wanita = false
+            System.out.print("Jenis Kelamin (true=Pria, false=Wanita): ");
+            jenisKelamin = sc.nextBoolean();
             System.out.print("Usia          : ");
-            dummy = sc.nextLine();
-            usia = Integer.parseInt(dummy);
+            usia = sc.nextInt();
+            sc.nextLine();
             System.out.println("------------------------------");
-
+            
             arrayOfDosen[i] = new Dosen21(kode, nama, jenisKelamin, usia);
         }
 
-        int i = 1;
-        for (Dosen21 dosen21 : arrayOfDosen) {
-            System.out.println("Data Dosen ke-" + i++);
-            System.out.println("Kode            : " + dosen21.kode);
-            System.out.println("Nama            : " + dosen21.nama);
-            System.out.println("Jenis Kelamin   : " + (dosen21.jenisKelamin ? "Pria" : "Wanita"));
-            System.out.println("Usia            : " + dosen21.usia);
-            System.out.println("------------------------------");
-        }
+        DataDosen21 data21 = new DataDosen21();
+
+        System.out.println("\nData Semua Dosen");
+        System.out.println("------------------------------");
+        data21.dataSemuaDosen(arrayOfDosen);
+
+        data21.jumlahDosenPerJenisKelamin(arrayOfDosen);
+        data21.rataRataUsiaDosenPerJenisKelamin(arrayOfDosen);
+        data21.infoDosenPalingTua(arrayOfDosen);
+        data21.infoDosenPalingMuda(arrayOfDosen);
 
         sc.close();
     }
