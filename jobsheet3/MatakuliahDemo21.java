@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class MatakuliahDemo21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Matakuliah21[] arrayOfMatakuliah = new Matakuliah21[3];
+
+        System.out.print("Masukkan jumlah Mata Kuliah: ");
+        int jumlahMatkul = sc.nextInt();
+        sc.nextLine();
+
+        Matakuliah21[] arrayOfMatakuliah = new Matakuliah21[jumlahMatkul];
         String kode, nama, dummy;
         int sks, jumlahJam;
 
