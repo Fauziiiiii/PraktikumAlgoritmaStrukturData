@@ -14,9 +14,6 @@ public class MatakuliahDemo21 {
         String kode, nama, dummy;
         int sks, jumlahJam;
 
-        arrayOfMatakuliah[0] = new Matakuliah21("", "", 0, 0);
-        arrayOfMatakuliah[0].tambahData("PASD", "Praktikum Algoritma dan Struktur Data", 6, 6);
-
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
             System.out.println("Masukkan Data Matakuliah ke-" + (i + 1));
             System.out.print("Kode       : ");
@@ -31,7 +28,9 @@ public class MatakuliahDemo21 {
             jumlahJam = Integer.parseInt(dummy);
             System.out.println("------------------------------");
 
-            arrayOfMatakuliah[i] = new Matakuliah21(kode, nama, sks, jumlahJam);
+            arrayOfMatakuliah[i] = new Matakuliah21();
+            arrayOfMatakuliah[i].tambahData(kode, nama, sks, jumlahJam);
+
         }
 
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
