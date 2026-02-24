@@ -28,7 +28,9 @@ public class DosenDemo21 {
             arrayOfDosen[i] = new Dosen21(kode, nama, jenisKelamin, usia);
         }
 
+        int i = 1;
         for (Dosen21 dosen21 : arrayOfDosen) {
+            System.out.println("Data Dosen ke-" + i++);
             System.out.println("Kode            : " + dosen21.kode);
             System.out.println("Nama            : " + dosen21.nama);
             System.out.println("Jenis Kelamin   : " + (dosen21.jenisKelamin ? "Pria" : "Wanita"));
