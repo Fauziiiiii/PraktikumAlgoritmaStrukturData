@@ -24,9 +24,11 @@ public class MahasiswaDemo21 {
             System.out.println("------------------------------");
         }
 
-        for(Mahasiswa21 mahasiswa : arrayOfMahasiswa){
-            mahasiswa.cetakInfo();
+        for (int i = 0; i < arrayOfMahasiswa.length; i++) {
+            System.out.println("Data Mahasiswa ke-" + (i + 1));
+            arrayOfMahasiswa[i].cetakInfo();
         }
+
 
         sc.close();
     }
