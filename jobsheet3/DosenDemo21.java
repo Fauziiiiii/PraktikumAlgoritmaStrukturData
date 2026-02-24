@@ -28,12 +28,11 @@ public class DosenDemo21 {
             arrayOfDosen[i] = new Dosen21(kode, nama, jenisKelamin, usia);
         }
 
-        for (int i = 0; i < arrayOfDosen.length; i++) {
-            System.out.println("Data Matakuliah ke-" + (i + 1));
-            System.out.println("Kode            : " + arrayOfDosen[i].kode);
-            System.out.println("Nama            : " + arrayOfDosen[i].nama);
-            System.out.println("Jenis Kelamin   : " + (arrayOfDosen[i].jenisKelamin ? "Pria" : "Wanita"));
-            System.out.println("Usia            : " + arrayOfDosen[i].usia);
+        for (Dosen21 dosen21 : arrayOfDosen) {
+            System.out.println("Kode            : " + dosen21.kode);
+            System.out.println("Nama            : " + dosen21.nama);
+            System.out.println("Jenis Kelamin   : " + (dosen21.jenisKelamin ? "Pria" : "Wanita"));
+            System.out.println("Usia            : " + dosen21.usia);
             System.out.println("------------------------------");
         }
 
