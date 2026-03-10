@@ -18,7 +18,7 @@ public class Sum {
 
     double totalDC(double arr[], int l, int r){
         if(l == r){
-            return arr[1];
+            return arr[l];
         }
 
         int mid = (l + r) / 2;
