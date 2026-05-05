@@ -12,90 +12,91 @@ public class SLLMain21 {
 
         SingleLinkedList21 sll = new SingleLinkedList21();
 
-        sll.print();
+        // sll.print();
 
-        sll.addFirst(mhs4);
-        sll.print();
+        // sll.addFirst(mhs4);
+        // sll.print();
 
-        sll.addLast(mhs1);
-        sll.print();
+        // sll.addLast(mhs1);
+        // sll.print();
 
-        sll.insertAfter("Dirga", mhs3);
+        // sll.insertAfter("Dirga", mhs3);
 
-        sll.insertAt(2, mhs2);
+        // sll.insertAt(2, mhs2);
 
-        sll.print();
+        // sll.print();
 
-        System.out.println("Data index 1: ");
-        sll.getData(1);
+        // System.out.println("Data index 1: ");
+        // sll.getData(1);
 
-        System.out.println("Data mahasiswa an Bimon berada pada index: " + sll.indexOf("bimon"));
-        System.out.println();
+        // System.out.println("Data mahasiswa an Bimon berada pada index: " + sll.indexOf("bimon"));
+        // System.out.println();
 
-        sll.removeFirst();
-        sll.removeLast();
-        sll.print();
-        sll.removeAt(0);
-        sll.print();
+        // sll.removeFirst();
+        // sll.removeLast();
+        // sll.print();
+        // sll.removeAt(0);
+        // sll.print();
 
 
         // SingleLinkedList21 sll = new SingleLinkedList21();
-        // Scanner sc = new Scanner(System.in);
-        // int pilihan;
+        Scanner sc = new Scanner(System.in);
+        int pilihan;
 
         
-        // do {
-        //     System.out.println("\n=== Menu Antrian Layanan Akademik ===");
-        //     System.out.println("1. Tambah Mahasiswa baru ke awal (add first)");
-        //     System.out.println("2. Tambah Mahasiswa baru ke akhir (add last)");
-        //     System.out.println("3. Tambah Mahasiswa baru setelah Nama Mahasiswa tertentu (insert after)");
-        //     System.out.println("4. Tambah Mahasiswa baru pada index tertentu (at index)");
-        //     System.out.println("5. Tampilkan Semua Mahasiswa");
-        //     System.out.println("0. Keluar");
-        //     System.out.print("Pilih menu: ");
-        //     pilihan = sc.nextInt();
+        do {
+            System.out.println("\n=== Menu Antrian Layanan Akademik ===");
+            System.out.println("1. Tambah Mahasiswa baru ke awal (add first)");
+            System.out.println("2. Tambah Mahasiswa baru ke akhir (add last)");
+            System.out.println("3. Tambah Mahasiswa baru setelah Nama Mahasiswa tertentu (insert after)");
+            System.out.println("4. Tambah Mahasiswa baru pada index tertentu (at index)");
+            System.out.println("5. Tampilkan Semua Mahasiswa");
+            System.out.println("0. Keluar");
+            System.out.print("Pilih menu: ");
+            pilihan = sc.nextInt();
 
-        //     switch (pilihan) {
-        //         case 1:
-        //             Mahasiswa21 dataFirst = inputDataMhs();
+            switch (pilihan) {
+                case 1:
+                    Mahasiswa21 dataFirst = inputDataMhs();
 
-        //             sll.addFirst(dataFirst);
-        //             break;
+                    sll.addFirst(dataFirst);
+                    break;
 
-        //         case 2:
-        //             Mahasiswa21 dataLast = inputDataMhs();
+                case 2:
+                    Mahasiswa21 dataLast = inputDataMhs();
 
-        //             sll.addLast(dataLast);
-        //             break;
+                    sll.addLast(dataLast);
+                    break;
 
-        //         case 3:
-        //             sc.nextLine();
-        //             System.out.print("Masukkan nama mahasiswa sebagai key:\t");
-        //             String keyNamaMhs = sc.nextLine();
+                case 3:
+                    sc.nextLine();
+                    System.out.print("Masukkan nama mahasiswa sebagai key:\t");
+                    String keyNamaMhs = sc.nextLine();
 
-        //             System.out.println("\nData Mahasiswa baru akan ditambah setelah data mahasiswa dengan nama: " + keyNamaMhs);
-        //             Mahasiswa21 dataAfter = inputDataMhs();
+                    System.out.println("\nData Mahasiswa baru akan ditambah setelah data mahasiswa dengan nama: " + keyNamaMhs);
+                    Mahasiswa21 dataAfter = inputDataMhs();
 
-        //             sll.insertAfter(keyNamaMhs, dataAfter);
-        //             break;
+                    sll.insertAfter(keyNamaMhs, dataAfter);
+                    break;
 
-        //         case 4:
-        //             System.out.print("Masukkan index:\t");
-        //             int index = sc.nextInt();
+                case 4:
+                    System.out.print("Masukkan index:\t");
+                    int index = sc.nextInt();
 
-        //             System.out.println("\nData Mahasiswa baru akan ditambah di index: " + index);
-        //             Mahasiswa21 dataAtIndex = inputDataMhs();
+                    System.out.println("\nData Mahasiswa baru akan ditambah di index: " + index);
+                    Mahasiswa21 dataAtIndex = inputDataMhs();
 
-        //             sll.insertAt(index, dataAtIndex);
-        //             break;
+                    sll.insertAt(index, dataAtIndex);
+                    break;
 
-        //         case 5:
-        //             sll.print();
+                case 5:
+                    sll.print();
+                    break;
 
-        //         default:
-        //             break;
-        //     }
-        // } while (pilihan != 0);
+                default:
+                    break;
+            }
+        } while (pilihan != 0);
 
     }
 
