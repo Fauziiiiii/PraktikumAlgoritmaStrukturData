@@ -13,11 +13,30 @@ public class BinaryTreeArray21 {
         this.idxLast = idxLast;
     }
 
+    void add(Mahasiswa21 dataMhs){
+        if(idxLast < dataMahasiswa.length){
+            dataMahasiswa[idxLast] = dataMhs;
+            idxLast++;
+        }else{
+            System.out.println("Data penuh");
+        }
+    }
+
     void traverseInOrder(int idxStart){
         if(idxStart <= idxLast){
             if(dataMahasiswa[idxStart] != null){
                 traverseInOrder(2 * idxStart + 1);
                 dataMahasiswa[idxStart].tampilInformasi();
+                traverseInOrder(2 * idxStart + 2);
+            }
+        }
+    }
+
+    void traversePreOrder(int idxStart){
+        if(idxStart <= idxLast){
+            if(dataMahasiswa[idxStart] != null){
+                dataMahasiswa[idxStart].tampilInformasi();
+                traverseInOrder(2 * idxStart + 1);
                 traverseInOrder(2 * idxStart + 2);
             }
         }

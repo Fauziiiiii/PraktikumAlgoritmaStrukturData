@@ -37,6 +37,25 @@ public class BinaryTree21 {
         }
     }
 
+    public void addRekursif(Mahasiswa21 mahasiswa) {
+        root = addRekursif(root, mahasiswa);
+    }
+
+    public Node21 addRekursif(Node21 current, Mahasiswa21 mahasiswa) {
+
+        if (current == null) {
+            return new Node21(mahasiswa);
+        }
+
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursif(current.left, mahasiswa);
+        } else {
+            current.right = addRekursif(current.right, mahasiswa);
+        }
+
+        return current;
+    }
+
     boolean find(double ipk){
         boolean result = false;
         Node21 current = root;
@@ -54,6 +73,47 @@ public class BinaryTree21 {
         return result;
     }
 
+    void cariMinIPK() {
+        if(isEmpty()){
+            System.out.println("Nullll");
+        }
+
+        Node21 current = root;
+
+        while(current.left != null){
+            current = current.left;
+        }
+
+        System.out.println("\nMin IPK:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    void cariMaxIPK() {
+        if(isEmpty()){
+            System.out.println("Nullll");
+        }
+
+        Node21 current = root;
+
+        while(current.right != null){
+            current = current.right;
+        }
+
+        System.out.println("\nMax IPK:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    void tampilMahasiswaIPKdiAtas(Node21 node, double ipkInput){
+        if(node != null){
+            if(node.mahasiswa.ipk >= ipkInput){
+                node.mahasiswa.tampilInformasi();
+            }
+            tampilMahasiswaIPKdiAtas(node.left, ipkInput);
+            tampilMahasiswaIPKdiAtas(node.right, ipkInput);
+        }
+    }
+
+    
     void traversePreOrder(Node21 node){
         if(node != null){
             node.mahasiswa.tampilInformasi();
