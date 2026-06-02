@@ -1,9 +1,11 @@
 package Praktikum14;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DemoArrayList {
     public static void main(String[] args) {
+        // praktikum - arraylist
         ArrayList<Customer> customers = new ArrayList<>();
 
         Customer customer1 = new Customer(1, "Zaskia");
@@ -41,5 +43,16 @@ public class DemoArrayList {
 
         System.out.println();
         System.out.println(customers);
+
+        // praktikum - sorting
+        ArrayList<String> daftarSiswa = new ArrayList<>();
+        daftarSiswa.add("Zainab");
+        daftarSiswa.add("Andi");
+        daftarSiswa.add("Rara");
+        Collections.sort(daftarSiswa);
+
+        System.out.println("\n" + daftarSiswa);
+
+        customers.sort((a, b) -> a.name.compareTo(b.name));
     }
 }
