@@ -54,5 +54,6 @@ public class DemoArrayList {
         System.out.println("\n" + daftarSiswa);
 
         customers.sort((a, b) -> a.name.compareTo(b.name));
+        System.out.println("\n" + customers);
     }
 }
