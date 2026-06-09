@@ -2,6 +2,8 @@ package Pertemuan14;
 
 public class BinaryTree21 {
     Node21 root;
+    int length;
+    int counter = 0;
 
     public BinaryTree21(){
         root = null;
@@ -24,12 +26,14 @@ public class BinaryTree21 {
                     current = current.left;
                     if(current == null){
                         parent.left = newNode;
+                        length++;
                         return;
                     }
                 }else{
                     current = current.right;
                     if(current == null){
                         parent.right = newNode;
+                        length++;
                         return;
                     }
                 }
@@ -56,6 +60,21 @@ public class BinaryTree21 {
         return current;
     }
 
+    // public Node21 addRekursif(Node21 current, Mahasiswa21 mahasiswa) {
+
+    //     if (current == null) {
+    //         return new Node21(mahasiswa);
+    //     }
+
+    //     if (mahasiswa.nama.compareTo(current.mahasiswa.nama) > 0) {
+    //         current.right = addRekursif(current.right, mahasiswa);
+    //     } else {
+    //         current.left = addRekursif(current.left, mahasiswa);
+    //     }
+
+    //     return current;
+    // }
+
     boolean find(double ipk){
         boolean result = false;
         Node21 current = root;
@@ -72,6 +91,46 @@ public class BinaryTree21 {
 
         return result;
     }
+
+    Node21 findByNamaMhs(Node21 node, String namaMhs){
+        Node21 result = null;
+        // Node21 current = root;
+
+        while(node != null){
+            if(node.mahasiswa.nama.compareTo(namaMhs) == 0){
+                result = node;
+                break;
+            }else if(node.mahasiswa.nama.compareTo(namaMhs) > 0){
+                node = node.right;
+            }else{
+                node = node.left;
+            }
+        }
+        
+        // while(current != null){
+        //     if(current.mahasiswa.nama.equalsIgnoreCase(namaMhs)){
+        //         result = current;
+        //         System.out.println("Proses true ditemukan");
+        //         break;
+        //     }else{
+        //         current = current.right;
+        //         System.out.println("proses else");
+        //     }
+        // }
+
+        return result;
+    }
+
+    // void findMahasiswaByKelas(String kelasInput){
+    //     Node21 current = root;
+    //     if(current != null){
+    //         if(current.mahasiswa.ipk >= ipkInput){
+    //             current.mahasiswa.tampilInformasi();
+    //         }
+    //         tampilMahasiswaIPKdiAtas(current.left, ipkInput);
+    //         tampilMahasiswaIPKdiAtas(current.right, ipkInput);
+    //     }
+    // }
 
     void cariMinIPK() {
         if(isEmpty()){
@@ -113,6 +172,36 @@ public class BinaryTree21 {
         }
     }
 
+    void find3MahasiswaIPKTertinggi(Node21 node){
+        if(node != null){
+            find3MahasiswaIPKTertinggi(node.left);
+            find3MahasiswaIPKTertinggi(node.right);
+            if(counter <= length && counter >= 7){
+                node.mahasiswa.tampilInformasi();
+            }
+            counter++;
+        }
+    }
+
+    void findMahasiswaByNama(Node21 node, String nama){
+        if(node != null){
+            findMahasiswaByNama(node.left, nama);
+            findMahasiswaByNama(node.right, nama);
+            if(node.mahasiswa.nama.equalsIgnoreCase(nama)){
+                node.mahasiswa.tampilInformasi();
+            }
+        }
+    }
+
+    void findMahasiswaByKelas(Node21 node, String kelas){
+        if(node != null){
+            if(node.mahasiswa.kelas.equalsIgnoreCase(kelas)){
+                node.mahasiswa.tampilInformasi();
+            }
+            findMahasiswaByKelas(node.left, kelas);
+            findMahasiswaByKelas(node.right, kelas);
+        }
+    }
     
     void traversePreOrder(Node21 node){
         if(node != null){
