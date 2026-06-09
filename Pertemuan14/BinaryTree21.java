@@ -187,6 +187,7 @@ public class BinaryTree21 {
         if(node != null){
             findMahasiswaByNama(node.left, nama);
             findMahasiswaByNama(node.right, nama);
+            
             if(node.mahasiswa.nama.equalsIgnoreCase(nama)){
                 node.mahasiswa.tampilInformasi();
             }

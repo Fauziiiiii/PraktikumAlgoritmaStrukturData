@@ -83,7 +83,7 @@ public class BinaryTreeMain21 {
 
         System.out.print("\nCari Mahasiswa berdasarkan nama: ");
         String namaINput = sc.nextLine();
-        bst.findMahasiswaByKelas(bst.root, namaINput);
+        bst.findMahasiswaByNama(bst.root, namaINput);
         
     }
 }
